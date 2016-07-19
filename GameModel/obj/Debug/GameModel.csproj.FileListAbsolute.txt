@@ -2,3 +2,4 @@ C:\Users\V\Desktop\Web Development\C#\Practice\GameDB\GameModel\bin\Debug\GameMo
 C:\Users\V\Desktop\Web Development\C#\Practice\GameDB\GameModel\bin\Debug\GameModel.pdb
 C:\Users\V\Desktop\Web Development\C#\Practice\GameDB\GameModel\obj\Debug\GameModel.dll
 C:\Users\V\Desktop\Web Development\C#\Practice\GameDB\GameModel\obj\Debug\GameModel.pdb
+C:\Users\V\Desktop\Web Development\C#\Practice\GameDB\GameModel\obj\Debug\GameModel.csprojResolveAssemblyReference.cache

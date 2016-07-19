@@ -60,7 +60,6 @@ namespace App
         private static void AddGame()
         {
             //Console.Clear();
-            addGameLabel:
             Console.WriteLine("Adding game...");
             Console.WriteLine(" ");
             bool gameFlag = false;
@@ -153,18 +152,19 @@ namespace App
                 return;
             }
             
-            Console.WriteLine("------------------------------------------------------------");
-            Console.WriteLine("Game Name                     | Platform   | Year   |  Price");
-            Console.WriteLine("------------------------------------------------------------");
-            Console.WriteLine();
+            Console.WriteLine("----------------------------------------------------------------");
+            Console.WriteLine("#  Game Name                     | Platform   | Year   |  Price");
+            Console.WriteLine("----------------------------------------------------------------");
+            Console.WriteLine(); 
 
             foreach (Game game in games)
             {
-                Console.WriteLine(string.Format("{0,-29} | {1,-10} | {2,-6} | {3,5}", game.GameName, game.Platform, game.Year, game.Price));
+                int gameIndex = game.ID;
+                Console.WriteLine(string.Format(gameIndex + ". " + "{0,-29} | {1,-10} | {2,-6} | {3,5:C}", game.GameName, game.Platform, game.Year, game.Price));
             }            
 
             Console.WriteLine();
-            Console.WriteLine("------------------------------------------------------------");
+            Console.WriteLine("----------------------------------------------------------------");
             Console.WriteLine();
 
             bool backFlag = false;
@@ -173,7 +173,14 @@ namespace App
             {
                 Console.WriteLine("Enter \"B\" to go back to the menu.");
                 Console.WriteLine("To sort the list by price press \"P\", or \"Y\" to sort by release year.");
+                Console.WriteLine("To see the game summary of each game enter the index number.");
+
                 string choice = Console.ReadLine();
+
+                int index = games.FindIndex(x => x.ID.ToString() == choice);
+
+                var currentGame = index.ToString();
+
 
                 if (choice.ToLower() == "b")
                 {
@@ -186,11 +193,11 @@ namespace App
                     Console.Clear();
                     Console.WriteLine("Game List: ");
                     Console.WriteLine();
+
                     IEnumerable<Game> orderedGames =
                         from game in games
                         orderby game.Price descending
                         select game;
-
 
                     Console.WriteLine("------------------------------------------------------------");
                     Console.WriteLine("Game Name                     | Platform   | Year   |  Price");
@@ -199,7 +206,7 @@ namespace App
 
                     foreach (Game game in orderedGames)
                     {
-                        Console.WriteLine(string.Format("{0,-29} | {1,-10} | {2,-6} | {3,5}", game.GameName, game.Platform, game.Year, game.Price));
+                        Console.WriteLine(string.Format("{0,-29} | {1,-10} | {2,-6} | {3,5:C}", game.GameName, game.Platform, game.Year, game.Price));
                     }
 
                     Console.WriteLine();
@@ -212,11 +219,11 @@ namespace App
                     Console.Clear();
                     Console.WriteLine("Game List: ");
                     Console.WriteLine();
+
                     IEnumerable<Game> orderedGames =
                         from game in games
                         orderby game.Year descending
                         select game;
-
 
                     Console.WriteLine("------------------------------------------------------------");
                     Console.WriteLine("Game Name                     | Platform   | Year   |  Price");
@@ -225,19 +232,36 @@ namespace App
 
                     foreach (Game game in orderedGames)
                     {
-                        Console.WriteLine(string.Format("{0,-29} | {1,-10} | {2,-6} | {3,5}", game.GameName, game.Platform, game.Year, game.Price));
+                        Console.WriteLine(string.Format("{0,-29} | {1,-10} | {2,-6} | {3,5:C}", game.GameName, game.Platform, game.Year, game.Price));
                     }
 
                     Console.WriteLine();
                     Console.WriteLine("------------------------------------------------------------");
                     Console.WriteLine();
                 }
-                else
+
+                //gameIndex.ToString()
+                else if (choice == currentGame)
                 {
+                    int _index = int.Parse(currentGame);
+
+                    var summary = games[_index].GameSummary;
+
+
                     Console.Clear();
-                    Console.WriteLine("{0} is wrong input for return to menu", choice);
+                    Console.WriteLine("Game Summary:");
+                    Console.WriteLine();
+                    Console.WriteLine(summary);
+                    Console.WriteLine("-----------------------------------------------------");
+                    Console.WriteLine();
+
                 }
-            }                        
-        }
+                //else
+                //{
+                //    Console.Clear();
+                //    Console.WriteLine("{0} is wrong input for return to menu", choice);
+                //}                                     
+            }
+        }        
     }
 }
