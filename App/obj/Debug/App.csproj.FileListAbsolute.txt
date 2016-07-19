@@ -1,0 +1,8 @@
+C:\Users\V\Desktop\Web Development\C#\Practice\GameDB\App\bin\Debug\App.exe.config
+C:\Users\V\Desktop\Web Development\C#\Practice\GameDB\App\bin\Debug\App.exe
+C:\Users\V\Desktop\Web Development\C#\Practice\GameDB\App\bin\Debug\App.pdb
+C:\Users\V\Desktop\Web Development\C#\Practice\GameDB\App\obj\Debug\App.csprojResolveAssemblyReference.cache
+C:\Users\V\Desktop\Web Development\C#\Practice\GameDB\App\obj\Debug\App.exe
+C:\Users\V\Desktop\Web Development\C#\Practice\GameDB\App\obj\Debug\App.pdb
+C:\Users\V\Desktop\Web Development\C#\Practice\GameDB\App\bin\Debug\GameModel.dll
+C:\Users\V\Desktop\Web Development\C#\Practice\GameDB\App\bin\Debug\GameModel.pdb
